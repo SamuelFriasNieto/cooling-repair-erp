@@ -1,4 +1,12 @@
-export default function Home() {
+'use client'
+
+import { createClient } from "@/lib/supabase/server";
+
+export default async function Home() {
+  const supabase = await createClient();
+
+  const { error } = await supabase.auth.signOut();
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       <div className="mx-auto max-w-4xl px-4 py-16">
