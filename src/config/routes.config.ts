@@ -74,6 +74,15 @@ export const ROUTES = {
       type: "home",
     },
   },
+  customerRegistration: {
+    self: {
+      name: "Registro de Cliente",
+      fullName: "Registro de Nuevo Cliente",
+      path: "/customer-registration",
+      icon: IconUsers,
+      type: "section",
+    },
+  },
   login: {
     self: {
       name: "Inicio de sesión",
