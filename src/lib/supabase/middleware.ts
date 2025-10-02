@@ -40,7 +40,7 @@ export async function updateSession(request: NextRequest) {
 
   if (
     !user &&
-    !["/login", "/auth", "/error"].some(route => request.nextUrl.pathname.includes(route))
+    !["/login", "/auth", "/error", "/customer-registration"].some(route => request.nextUrl.pathname.includes(route))
         // !request.nextUrl.pathname.includes('/login') &&
     // !request.nextUrl.pathname.includes('/auth') &&
     // !request.nextUrl.pathname.includes('/error')

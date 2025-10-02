@@ -2,27 +2,14 @@
 
 import * as React from "react"
 import {
-  IconCamera,
-  IconChartBar,
-  IconDashboard,
-  IconDatabase,
-  IconFileAi,
-  IconFileDescription,
-  IconFileWord,
-  IconFolder,
-  IconHelp,
   IconInnerShadowTop,
-  IconListDetails,
-  IconReport,
-  IconSearch,
-  IconSettings,
-  IconUsers,
 } from "@tabler/icons-react"
 
 import { NavDocuments } from "@/components/nav-documents"
 import { NavMain } from "@/components/nav-main"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 import {
   Sidebar,
   SidebarContent,
@@ -33,7 +20,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { useUser } from "@/hooks/useUser"
-import { ROUTES } from "@/config/routes.config"
 
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -55,15 +41,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
-            >
-              <a href="#">
+            <div className="flex items-center justify-between w-full px-1.5 py-1.5">
+              <a href="#" className="flex items-center gap-2">
                 <IconInnerShadowTop className="!size-5" />
                 <span className="text-base font-semibold">CoolingRepair ERP</span>
               </a>
-            </SidebarMenuButton>
+              <ThemeToggle />
+            </div>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>

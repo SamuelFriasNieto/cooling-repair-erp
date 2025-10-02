@@ -133,6 +133,22 @@ export const ROUTES = {
       icon: IconFileDescription,
       type: "section",
     },
+    upload: {
+      self: {
+        path: "/upload",
+        name: "Subir Factura",
+        fullName: "Subir Nueva Factura",
+        type: "sub-section",
+      },
+    },
+    vatReport: {
+      self: {
+        path: "/vat-report",
+        name: "Informe IVA",
+        fullName: "Informe de IVA",
+        type: "sub-section",
+      },
+    },
   },
   reports: {
     self: {

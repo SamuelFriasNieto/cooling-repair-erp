@@ -120,3 +120,49 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Transiciones suaves para el cambio de tema */
+html {
+  transition: none;
+}
+
+html.theme-transitioning {
+  transition: none !important;
+}
+
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: none !important;
+}
+
+html:not(.theme-transitioning) * {
+  transition: 
+    background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-spin,
+.animate-spin *,
+.animate-pulse,
+.animate-pulse *,
+.animate-bounce,
+.animate-bounce *,
+[data-state="open"],
+[data-state="closed"],
+[class*="animate-"] {
+  transition: unset !important;
+}
+
+.theme-smooth-transition * {
+  transition: 
+    background-color 0.25s ease-out,
+    border-color 0.25s ease-out,
+    color 0.25s ease-out,
+    box-shadow 0.25s ease-out !important;
+}

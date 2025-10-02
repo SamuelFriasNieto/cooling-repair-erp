@@ -32,9 +32,10 @@ export function CustomerRegistrationForm({
   const {isPending, execute, data} = useServerAction(createCustomerRegistrationAction, {
     onError: ({err}) => {
       toast.error( err.message);
+      console.log(err.message)
     },
     onSuccess:({data}) => {
-      toast.success(data.message);
+      toast.success("Formulario enviado correctamente");
       console.log("CustomerRegistration enviada:", data);
     }
   });
@@ -53,7 +54,7 @@ export function CustomerRegistrationForm({
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">
-            CustomerRegistration de Reparación/Instalación
+            Darse de alta
           </CardTitle>
           <CardDescription>Rellena aquí tus datos de cliente</CardDescription>
         </CardHeader>

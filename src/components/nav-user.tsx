@@ -29,6 +29,8 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 import { getInitialsFromName } from "@/lib/presenters.lib"
+import { createClient } from "@/lib/supabase/server"
+import { signOut } from "@/app/(auth)/auth"
 
 export function NavUser({
   user,
@@ -101,7 +103,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={signOut}>
               <IconLogout />
               Log out
             </DropdownMenuItem>
